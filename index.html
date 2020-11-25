@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.design{
+			text-align: center;
+			border:1px solid black;
+			margin-left: 32%;
+			margin-right: 32%;
+			margin-top: 12%;
+			border-radius: 30px;
+			background-color: #877d89;
+			height: 300px auto ;
+			}
+			input[type=number]
+		{
+			font-size: 22px;
+			border-radius: 10px;
+			padding-bottom:10px ;
+			padding-top: 10px;
+			background-color: #fff;
+			border:white;
+			outline: none;
+			margin-top: 20px;
+		}
+		select{
+			font-size: 20px;
+			padding-right: 10px;
+			padding-left: 10px;
+			border:white;
+		}
+		h3{
+			text-align: center;
+			font-size: 30px;
+			text-decoration: underline;
+		}
+		option{
+			font-size: 15px;
+		}
+		button
+		{
+			font-size: 22px;
+			padding-left: 10%;
+			padding-right: 10%;
+			margin-right: 15px;
+			border-radius: 118px;
+			border:white;
+			outline: none;
+			margin-top: 25px;
+			height: 40px;
+		}
+	</style>
+</head>
+<body>
+<form class="design">
+	<h3>Temprature converter</h3>	
+	<p><select id="scale" >
+			<option value="s" ><--select--></option>
+			 <option value="F" >farenhite</option>
+			 <option value="C" >celcius</option>
+		</select></p>
+
+	<p><input type="number" id="inp" oninput="ctofcon(this.value)" onchange="ctofcon(this.value)" placeholder="please Enter the number"></p>
+	<p><button onclick="clr()">reset</button></p>
+	<h1 id="demo"></h1>
+</form>
+<script type="text/javascript">
+	
+
+function ctofcon(temp)
+{
+	debugger;
+	var p=document.getElementById('scale').value
+
+	if(p=="F")
+	{
+		document.getElementById('demo').innerHTML=((temp-32)*(5/9)).toFixed(2)+"&deg;"+"C"
+	}
+	else if (p=="C")
+	{
+		document.getElementById('demo').innerHTML=((temp*(9/5)+32)).toFixed(2)+"&deg;"+"F"
+	}
+	else
+		alert('please select the option')
+}
+
+
+
+
+
+</script>
+</body>
+</html>
